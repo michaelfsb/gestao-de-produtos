@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace StudentTeacher.Repo.Data;
+namespace GestaoDeProdutos.Repository.Data;
 
 public class ProdutoData : IEntityTypeConfiguration<Produto>
 {
@@ -11,11 +11,11 @@ public class ProdutoData : IEntityTypeConfiguration<Produto>
         builder.HasData(
             new Produto
             {
-                Codigo = 1,
+                Id = 1,
                 Descricao = "Produto 1",
                 Situacao = true,
-                Fabricacao = DateOnly.FromDateTime(DateTime.Now),
-                Validade = DateOnly.FromDateTime(DateTime.Now.AddDays(60)),
+                Fabricacao = DateTime.Now,
+                Validade =DateTime.Now.AddDays(60),
                 CodigoFornecedor = 1,
                 DescricaoFornecedor = "Fornecedor 1",
                 CnpjFornecedor = "XX.XXX.XXX/0001-XX"
@@ -23,11 +23,11 @@ public class ProdutoData : IEntityTypeConfiguration<Produto>
 
             new Produto
             {
-                Codigo = 2,
+                Id = 2,
                 Descricao = "Produto 2",
                 Situacao = true,
-                Fabricacao = DateOnly.FromDateTime(DateTime.Now),
-                Validade = DateOnly.FromDateTime(DateTime.Now.AddDays(180)),
+                Fabricacao = DateTime.Now,
+                Validade = DateTime.Now.AddDays(180),
                 CodigoFornecedor = 2,
                 DescricaoFornecedor = "Fornecedor 2",
                 CnpjFornecedor = "XX.XXX.XXX/0001-XX"
@@ -35,7 +35,7 @@ public class ProdutoData : IEntityTypeConfiguration<Produto>
 
             new Produto
             {
-                Codigo = 3,
+                Id = 3,
                 Descricao = "Produto 3"
             });
     }

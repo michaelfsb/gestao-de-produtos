@@ -2,17 +2,17 @@
 
 namespace GestaoDeProdutos.Domain.Dtos
 {
-    public class ProdutoDTO
+    public class ProdutoDto
     {
-        public int Codigo { get; set; }
+        public int Id { get; set; }
 
         public string? Descricao { get; set; }
 
         public bool Situacao { get; set; }
 
-        public DateOnly? Fabricacao { get; set; }
+        public DateTime? Fabricacao { get; set; }
 
-        public DateOnly? Validade { get; set; }
+        public DateTime? Validade { get; set; }
 
         public int? CodigoFornecedor { get; set; }
 
@@ -39,9 +39,9 @@ namespace GestaoDeProdutos.Domain.Dtos
 
         public bool Situacao { get; set; }
 
-        public DateOnly? Fabricacao { get; set; }
+        public DateTime? Fabricacao { get; set; }
         
-        public DateOnly? Validade { get; set; }
+        public DateTime? Validade { get; set; }
 
         public int? CodigoFornecedor { get; set; }
 

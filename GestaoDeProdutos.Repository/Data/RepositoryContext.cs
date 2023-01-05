@@ -1,9 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using GestaoDeProdutos.Domain.Models;
-using System.Collections.Generic;
-using System.Reflection.Emit;
 
-namespace StudentTeacher.Repo.Data;
+namespace GestaoDeProdutos.Repository.Data;
 
 public class RepositoryContext : DbContext
 {
@@ -16,5 +14,5 @@ public class RepositoryContext : DbContext
         modelBuilder.ApplyConfiguration(new ProdutoData());
     }
 
-    public DbSet<Produto> Teachers { get; set; }
+    public DbSet<Produto> Produto { get; set; }
 }

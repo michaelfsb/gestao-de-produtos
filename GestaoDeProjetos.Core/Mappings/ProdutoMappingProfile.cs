@@ -3,13 +3,13 @@ using GestaoDeProdutos.Domain.Dtos;
 using GestaoDeProdutos.Domain.Models;
 
 
-namespace StudentTeacher.Core.Mappings;
+namespace GestaoDeProdutos.Domain.Mappings;
 
 public class ProdutoMappingProfile : Profile
 {
     public ProdutoMappingProfile()
     {
-        CreateMap<Produto, ProdutoDTO>();
+        CreateMap<Produto, ProdutoDto>();
 
         CreateMap<ProdutoCreateDto, Produto>();
 
