@@ -5,8 +5,8 @@ namespace GestaoDeProdutos.Domain.Models
 {
     public class Produto
     {
-        [Column("ProdutoId")]
-        public int Id { get; set; }
+        [Key]
+        public int Codigo { get; set; }
 
         [Required(ErrorMessage = "A descrição do produto é obrigatória.")]
         public string? Descricao { get; set; }

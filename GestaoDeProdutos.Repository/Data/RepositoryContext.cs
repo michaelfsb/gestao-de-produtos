@@ -14,5 +14,5 @@ public class RepositoryContext : DbContext
         modelBuilder.ApplyConfiguration(new ProdutoData());
     }
 
-    public DbSet<Produto> Produto { get; set; }
+    public DbSet<Produto> Produtos { get; set; }
 }

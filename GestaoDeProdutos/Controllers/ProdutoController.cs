@@ -25,7 +25,7 @@ public class ProdutoController : BaseApiController
         return CreatedAtRoute("ProdutoByCodigo",
             new
             {
-                produtoCodigo = produtoReturn.Id
+                codigo = produtoReturn.Codigo
             },
             produtoReturn);
     }
@@ -40,7 +40,7 @@ public class ProdutoController : BaseApiController
             var produtosDto = _mapper.Map<IEnumerable<ProdutoDto>>(produtos);
             return Ok(produtosDto);
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             return StatusCode(500, "Internal server error");
         }
@@ -48,9 +48,9 @@ public class ProdutoController : BaseApiController
 
 
     [HttpGet("{codigo}", Name = "ProdutoByCodigo")]
-    public async Task<IActionResult> GetProduto(int produtoId)
+    public async Task<IActionResult> GetProduto(int codigo)
     {
-        var produto = await _repository.Produto.GetProduto(produtoId);
+        var produto = await _repository.Produto.GetProduto(codigo);
         if (produto is null)
         {
             return NotFound();
@@ -64,7 +64,7 @@ public class ProdutoController : BaseApiController
 
 
     [HttpPut("{codigo}")]
-    public async Task<IActionResult> UpdateProduto(int produtoId, [FromBody] ProdutoUpdateDto produto)
+    public async Task<IActionResult> UpdateProduto(int codigo, [FromBody] ProdutoUpdateDto produto)
     {
         var produtoData = HttpContext.Items["produto"] as Produto;
         _mapper.Map(produto, produtoData);

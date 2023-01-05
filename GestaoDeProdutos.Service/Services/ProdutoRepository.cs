@@ -15,8 +15,8 @@ public class ProdutoRepository : RepositoryBase<Produto>, IProdutoRepository
     public async Task DeleteProduto(Produto produto) => await RemoveAsync(produto);
 
     public async Task<IEnumerable<Produto>> GetAllProdutos() 
-        => await FindAllAsync().Result.OrderBy(c => c.Id).ToListAsync();
+        => await FindAllAsync().Result.OrderBy(c => c.Codigo).ToListAsync();
 
     public async Task<Produto?> GetProduto(int codigo)
-        => await FindByConditionAsync(c => c.Id.Equals(codigo)).Result.SingleOrDefaultAsync();
+        => await FindByConditionAsync(c => c.Codigo.Equals(codigo)).Result.SingleOrDefaultAsync();
 }

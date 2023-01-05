@@ -11,7 +11,7 @@ public class ProdutoData : IEntityTypeConfiguration<Produto>
         builder.HasData(
             new Produto
             {
-                Id = 1,
+                Codigo = 1,
                 Descricao = "Produto 1",
                 Situacao = true,
                 Fabricacao = DateTime.Now,
@@ -23,7 +23,7 @@ public class ProdutoData : IEntityTypeConfiguration<Produto>
 
             new Produto
             {
-                Id = 2,
+                Codigo = 2,
                 Descricao = "Produto 2",
                 Situacao = true,
                 Fabricacao = DateTime.Now,
@@ -35,7 +35,7 @@ public class ProdutoData : IEntityTypeConfiguration<Produto>
 
             new Produto
             {
-                Id = 3,
+                Codigo = 3,
                 Descricao = "Produto 3"
             });
     }
